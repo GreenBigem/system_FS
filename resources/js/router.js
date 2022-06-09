@@ -29,7 +29,17 @@ const router = new VueRouter({
         },
         {
             path: '/contractors', component: () => import('./components/Contractors'),
-            name: 'contractors'
+            name: 'contractors',
+            children: [
+                {
+                    path: 'ind_contractors', component: () => import('./components/contractors/IndContractors'),
+                    name: 'indContractors',
+                },
+                {
+                    path: 'ent_contractors', component: () => import('./components/contractors/EntContractors'),
+                    name: 'entContractors',
+                }
+            ]
         }
     ]
 })
