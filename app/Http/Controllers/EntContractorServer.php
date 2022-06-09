@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\IndContractors;
+use App\Models\EntContractors;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,10 +16,10 @@ class EntContractorServer extends Controller
     public function index()
     {
         $user_id = Auth::id();
-        $indContractors = IndContractors::where('user_id', $user_id)
-            ->orderBy('surname')
+        $entContractors = EntContractors::where('user_id', $user_id)
+            ->orderBy('updated_at')
             ->get();
-        return $indContractors;
+        return $entContractors;
     }
 
     /**
@@ -85,6 +85,6 @@ class EntContractorServer extends Controller
      */
     public function destroy($id)
     {
-        IndContractors::destroy($id);
+        EntContractors::destroy($id);
     }
 }

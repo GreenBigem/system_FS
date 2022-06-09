@@ -72,7 +72,7 @@ export default {
 
     components: {},
 
-    mounted() {
+    beforeMount() {
         this.getIndContractors();
     },
 

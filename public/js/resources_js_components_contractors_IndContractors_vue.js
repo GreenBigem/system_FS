@@ -81,7 +81,7 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   components: {},
-  mounted: function mounted() {
+  beforeMount: function beforeMount() {
     this.getIndContractors();
   },
   methods: {
