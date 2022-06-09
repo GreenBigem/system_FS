@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MainServer;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,14 +14,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
+//Auth::routes();
+//
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//
+//Auth::routes();
+//
+//Route::get('/system', [App\Http\Controllers\SystemController::class, 'index'])->name('system');
+
+//Route::get('/system/ind_contractors', [App\Http\Controllers\System\IndContractorsController::class, 'index'])
+//    ->name('system.ind_contractors');
 
 Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/system', [App\Http\Controllers\SystemController::class, 'index'])->name('system');
+Route::get('{page}', MainServer::class)
+    ->where('page', '.*');

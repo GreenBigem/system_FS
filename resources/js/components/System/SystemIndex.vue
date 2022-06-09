@@ -32,9 +32,10 @@
     import Footer from "./Footer";
 
     export default {
-
         data() {
+            return {
 
+            }
         },
 
         mounted() {

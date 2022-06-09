@@ -37,11 +37,30 @@
                         <li class="nav-item active">
                             <a class="nav-link" href="/system">Рабочий стол<span class="sr-only"></span></a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Задачи (CRM)</a>
+                        <a>Задачи и Проекты (CRM)</a>
+                        <li class="nav-item dropdown">
+
+                                <a class="nav-link dropdown-toggle" href="/crm" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Задачи и Проекты (CRM)
+                                </a>
+
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Создать Задачу</a>
+                                <a class="dropdown-item" href="#">Создать Проект</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Список Задач</a>
+                                <a class="dropdown-item" href="#">Список Проектов</a>
+                            </div>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Проекты (Кейсы)</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Кейсы
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Создать кейс</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Список кейсов</a>
+                            </div>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -77,7 +96,7 @@
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
+                                    {{ Auth::user()->name }} {{ Auth::user()->id }}
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">

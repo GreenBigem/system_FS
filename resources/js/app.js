@@ -1,20 +1,17 @@
 import Vue from "vue";
-import SystemIndex from "./components/System/SystemIndex";
-import PostComponent from "./components/PostComponent";
 
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
+import Index from "./components/Index";
+import router from "./router";
 
 require('./bootstrap');
 
-const app = new Vue({
+new Vue({
         el: '#app',
         components: {
-            SystemIndex,
-            PostComponent
-        }
+            Index
+        },
+        router
     }
 )
+
+Vue.config.productionTip = false
