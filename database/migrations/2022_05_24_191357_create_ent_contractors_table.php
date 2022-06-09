@@ -19,8 +19,19 @@ return new class extends Migration
             $table->collation = 'utf8mb4_general_ci';
 
             $table->id();
-            $table->integer('user_id');
-            $table->index('user_id');
+
+            // BIGINT[(M)] [UNSIGNED] [ZEROFILL] Большое целое число. Диапазон без знака от 0 до 18446744073709551615.
+            // Использование целых чисел для хранения больших беззнаковых величин в столбце с типом BIGINT.
+
+            $table->unsignedBigInteger('user_id');
+
+            // Индексируем по user_id и присваиваем имя: "'Таблица в ед. числе'_'поле'_'на конце 'x'".
+
+            $table->index('user_id', 'ent_contractor_user_idx');
+
+            // Добавляем внешний ключ на (ON) таблицу users по ключу (REFERENCES) id.
+
+            $table->foreign('user_id', 'ent_contractor_user_fk')->on('users')->references('id');
 
             $table->string('full_name', 100)->nullable();
             $table->string('short_name', 100);
@@ -62,11 +73,11 @@ return new class extends Migration
             $table->string('contact_email', 100)->nullable();
             $table->string('contact_tel', 11)->nullable();
 
-//            $table->enum('gender', ['Женский', 'Мужской'])->nullable();
-
-//            $table->boolean('is_bancruptcy_commissioner')->default(false);
-
             $table->timestamps();
+
+            // Используем SoftDeletes для мягкого удаления данных из базы
+
+            $table->softDeletes();
         });
     }
 
