@@ -8,11 +8,14 @@ use Illuminate\Support\Facades\Auth;
 
 class IndContractorServer extends Controller
 {
+
     /**
-     * Display a listing of the resource.
+     * В Функции index мы получаем всех контрагентов
+     * по id идентифицированного пользователя
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
         $user_id = Auth::id();
@@ -23,7 +26,7 @@ class IndContractorServer extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Функция create создания нового контрагента
      *
      * @return \Illuminate\Http\Response
      */
@@ -44,7 +47,8 @@ class IndContractorServer extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * При передачи id контрагента функция show возвращает
+     * все данные контрагента
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -78,7 +82,8 @@ class IndContractorServer extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * При получении id контрагента функция destroy
+     * удаляет соответствующего контрагенты
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
