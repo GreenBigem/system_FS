@@ -162,6 +162,74 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {};
@@ -714,7 +782,7 @@ var render = function () {
                   attrs: {
                     href: "#",
                     "data-bs-toggle": "modal",
-                    "data-bs-target": "#exampleModal",
+                    "data-bs-target": "#addIndContractor",
                     "data-bs-whatever": "@mdo",
                   },
                 },
@@ -765,6 +833,8 @@ var render = function () {
     ]),
     _vm._v(" "),
     _vm._m(2),
+    _vm._v(" "),
+    _vm._m(3),
   ])
 }
 var staticRenderFns = [
@@ -808,7 +878,7 @@ var staticRenderFns = [
             href: "#",
             tabindex: "-1",
             "data-bs-toggle": "modal",
-            "data-bs-target": "#exampleModal",
+            "data-bs-target": "#addEntContractor",
             "data-bs-whatever": "@fat",
             "aria-current": "page",
           },
@@ -826,9 +896,9 @@ var staticRenderFns = [
       {
         staticClass: "modal fade",
         attrs: {
-          id: "exampleModal",
+          id: "addIndContractor",
           tabindex: "-1",
-          "aria-labelledby": "exampleModalLabel",
+          "aria-labelledby": "addIndContractorModalLabel",
           "aria-hidden": "true",
         },
       },
@@ -840,7 +910,7 @@ var staticRenderFns = [
                 "h5",
                 {
                   staticClass: "modal-title",
-                  attrs: { id: "exampleModalLabel" },
+                  attrs: { id: "addIndContractorModalLabel" },
                 },
                 [
                   _vm._v(
@@ -866,14 +936,14 @@ var staticRenderFns = [
                     "label",
                     {
                       staticClass: "col-form-label",
-                      attrs: { for: "recipient-name" },
+                      attrs: { for: "indContractor-surname" },
                     },
                     [_vm._v("Фамилия (обязательно):")]
                   ),
                   _vm._v(" "),
                   _c("input", {
                     staticClass: "form-control",
-                    attrs: { type: "text", id: "recipient-name" },
+                    attrs: { type: "text", id: "indContractor-surname" },
                   }),
                 ]),
                 _vm._v(" "),
@@ -882,14 +952,121 @@ var staticRenderFns = [
                     "label",
                     {
                       staticClass: "col-form-label",
-                      attrs: { for: "message-text" },
+                      attrs: { for: "indContractor-name" },
                     },
                     [_vm._v("Имя:")]
                   ),
                   _vm._v(" "),
-                  _c("textarea", {
+                  _c("input", {
                     staticClass: "form-control",
-                    attrs: { id: "message-text" },
+                    attrs: { id: "indContractor-name" },
+                  }),
+                ]),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "modal-footer" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-secondary",
+                  attrs: { type: "button", "data-bs-dismiss": "modal" },
+                },
+                [
+                  _vm._v(
+                    "\n                        Закрыть\n                    "
+                  ),
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                { staticClass: "btn btn-primary", attrs: { type: "button" } },
+                [
+                  _vm._v(
+                    "\n                        Создать и редактировать\n                    "
+                  ),
+                ]
+              ),
+            ]),
+          ]),
+        ]),
+      ]
+    )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "modal fade",
+        attrs: {
+          id: "addEntContractor",
+          tabindex: "-1",
+          "aria-labelledby": "addEntContractorModalLabel",
+          "aria-hidden": "true",
+        },
+      },
+      [
+        _c("div", { staticClass: "modal-dialog" }, [
+          _c("div", { staticClass: "modal-content" }, [
+            _c("div", { staticClass: "modal-header" }, [
+              _c(
+                "h5",
+                {
+                  staticClass: "modal-title",
+                  attrs: { id: "addEntContractorModalLabel" },
+                },
+                [
+                  _vm._v(
+                    "\n                        Добавить юр. лицо\n                    "
+                  ),
+                ]
+              ),
+              _vm._v(" "),
+              _c("button", {
+                staticClass: "btn-close",
+                attrs: {
+                  type: "button",
+                  "data-bs-dismiss": "modal",
+                  "aria-label": "Close",
+                },
+              }),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "modal-body" }, [
+              _c("form", [
+                _c("div", { staticClass: "mb-3" }, [
+                  _c(
+                    "label",
+                    {
+                      staticClass: "col-form-label",
+                      attrs: { for: "entContractor_short_name" },
+                    },
+                    [_vm._v("Короткое наименование (обязательно):")]
+                  ),
+                  _vm._v(" "),
+                  _c("input", {
+                    staticClass: "form-control",
+                    attrs: { type: "text", id: "entContractor_short_name" },
+                  }),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "mb-3" }, [
+                  _c(
+                    "label",
+                    {
+                      staticClass: "col-form-label",
+                      attrs: { for: "entContractor-inn" },
+                    },
+                    [_vm._v("ИНН:")]
+                  ),
+                  _vm._v(" "),
+                  _c("input", {
+                    staticClass: "form-control",
+                    attrs: { id: "entContractor-inn" },
                   }),
                 ]),
               ]),

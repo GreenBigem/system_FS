@@ -5432,6 +5432,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "index",
@@ -5452,16 +5462,16 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     getToken: function getToken() {
-      this.token = localStorage.getItem('x_xsrf_token');
+      this.token = localStorage.getItem("x_xsrf_token");
     },
     logout: function logout() {
       var _this = this;
 
-      axios.post('/logout').then(function (res) {
-        localStorage.removeItem('x_xsrf_token');
+      axios.post("/logout").then(function (res) {
+        localStorage.removeItem("x_xsrf_token");
 
         _this.$router.push({
-          name: 'user.login'
+          name: "user.login"
         });
       });
     }
@@ -28500,19 +28510,19 @@ var render = function () {
         [
           _vm.token
             ? _c("router-link", { attrs: { to: { name: "get.index" } } }, [
-                _vm._v("Get"),
+                _vm._v("Главная"),
               ])
             : _vm._e(),
           _vm._v(" "),
           !_vm.token
             ? _c("router-link", { attrs: { to: { name: "user.login" } } }, [
-                _vm._v("Login"),
+                _vm._v("Войти"),
               ])
             : _vm._e(),
           _vm._v(" "),
           _vm.token
             ? _c("router-link", { attrs: { to: { name: "user.personal" } } }, [
-                _vm._v("Personal"),
+                _vm._v("Профайл"),
               ])
             : _vm._e(),
           _vm._v(" "),
@@ -28520,13 +28530,13 @@ var render = function () {
             ? _c(
                 "router-link",
                 { attrs: { to: { name: "user.registration" } } },
-                [_vm._v("Registration")]
+                [_vm._v("Регистрация")]
               )
             : _vm._e(),
           _vm._v(" "),
           _vm.token
             ? _c("router-link", { attrs: { to: { name: "contractors" } } }, [
-                _vm._v("Contractors"),
+                _vm._v("Контрагенты"),
               ])
             : _vm._e(),
           _vm._v(" "),
@@ -28542,7 +28552,7 @@ var render = function () {
                     },
                   },
                 },
-                [_vm._v("Logout")]
+                [_vm._v("Выйти")]
               )
             : _vm._e(),
           _vm._v(" "),

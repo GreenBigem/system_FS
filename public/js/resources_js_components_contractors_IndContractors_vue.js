@@ -65,14 +65,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "IndContractors",
   data: function data() {
@@ -189,72 +181,64 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c("div", [
     _c("div", { staticClass: "py-0" }, [
-      _c("div", [
-        _c("div", { staticClass: "row justify-content-around" }, [
-          _c("div", { staticClass: "card text-black p-2" }, [
-            _c("div", { staticClass: "card-body" }, [
-              _c("table", { staticClass: "table table-hover" }, [
-                _vm._m(0),
-                _vm._v(" "),
-                _c(
-                  "tbody",
-                  _vm._l(_vm.indContractors, function (item) {
-                    return _c("tr", [
-                      _c("td", [_vm._v(_vm._s(item.id))]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v(_vm._s(item.surname))]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v(_vm._s(item.name))]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v(_vm._s(item.patronymic))]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v(_vm._s(item.birth_date))]),
-                      _vm._v(" "),
-                      _c(
-                        "td",
-                        [
-                          _c(
-                            "router-link",
-                            {
-                              staticClass: "btn btn-warning",
-                              attrs: {
-                                to: {
-                                  name: "user.personal",
-                                },
-                              },
-                            },
-                            [_vm._v("Show / Edit")]
-                          ),
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c("td", [
+      _c("div", { staticClass: "row justify-content-around" }, [
+        _c("div", { staticClass: "card text-black p-2" }, [
+          _c("div", { staticClass: "card-body" }, [
+            _c("table", { staticClass: "table table-hover" }, [
+              _vm._m(0),
+              _vm._v(" "),
+              _c(
+                "tbody",
+                _vm._l(_vm.indContractors, function (item) {
+                  return _c("tr", [
+                    _c("td", [_vm._v(_vm._s(item.id))]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(item.surname))]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(item.name))]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(item.patronymic))]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(item.birth_date))]),
+                    _vm._v(" "),
+                    _c(
+                      "td",
+                      [
                         _c(
-                          "a",
+                          "router-link",
                           {
-                            staticClass: "btn btn-danger",
-                            attrs: { href: "/delete" },
-                            on: {
-                              click: function ($event) {
-                                $event.preventDefault()
-                                return _vm.deleteIndContractor(item.id)
+                            staticClass: "btn btn-warning",
+                            attrs: {
+                              to: {
+                                name: "user.personal",
                               },
                             },
                           },
-                          [_vm._v("Delete")]
+                          [_vm._v("Редактировать")]
                         ),
-                      ]),
-                    ])
-                  }),
-                  0
-                ),
-              ]),
-              _vm._v(" "),
-              _c(
-                "a",
-                { staticClass: "btn btn-secondary", attrs: { href: "#" } },
-                [_vm._v("Add ind. contractor")]
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c("td", [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "btn btn-danger",
+                          attrs: { href: "/delete" },
+                          on: {
+                            click: function ($event) {
+                              $event.preventDefault()
+                              return _vm.deleteIndContractor(item.id)
+                            },
+                          },
+                        },
+                        [_vm._v("Удалить")]
+                      ),
+                    ]),
+                  ])
+                }),
+                0
               ),
             ]),
           ]),
@@ -272,21 +256,17 @@ var staticRenderFns = [
       _c("tr", [
         _c("th", { attrs: { scope: "col" } }, [_vm._v("id")]),
         _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Surname")]),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Фамилия")]),
         _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Name")]),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Имя")]),
         _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Patronymic")]),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Отчество")]),
         _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Birth Date")]),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Дата рождения")]),
         _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [
-          _vm._v(
-            "\n                                        Press to show / edit\n                                    "
-          ),
-        ]),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Редактирование")]),
         _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Press to delete")]),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Удаление")]),
       ]),
     ])
   },

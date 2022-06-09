@@ -38,7 +38,7 @@
                                 class="nav-link"
                                 href="#"
                                 data-bs-toggle="modal"
-                                data-bs-target="#exampleModal"
+                                data-bs-target="#addIndContractor"
                                 data-bs-whatever="@mdo"
                                 v-bind:class="{
                                     active:
@@ -66,7 +66,7 @@
                                 href="#"
                                 tabindex="-1"
                                 data-bs-toggle="modal"
-                                data-bs-target="#exampleModal"
+                                data-bs-target="#addEntContractor"
                                 data-bs-whatever="@fat"
                                 aria-current="page"
                                 >Добавить юр. лицо</a
@@ -84,19 +84,19 @@
             </div>
         </div>
 
-        <!-- Modal -->
+        <!-- Modal for Adding Ind.Contractors -->
 
         <div
             class="modal fade"
-            id="exampleModal"
+            id="addIndContractor"
             tabindex="-1"
-            aria-labelledby="exampleModalLabel"
+            aria-labelledby="addIndContractorModalLabel"
             aria-hidden="true"
         >
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">
+                        <h5 class="modal-title" id="addIndContractorModalLabel">
                             Добавить физ. лицо
                         </h5>
                         <button
@@ -110,24 +110,26 @@
                         <form>
                             <div class="mb-3">
                                 <label
-                                    for="recipient-name"
+                                    for="indContractor-surname"
                                     class="col-form-label"
                                     >Фамилия (обязательно):</label
                                 >
                                 <input
                                     type="text"
                                     class="form-control"
-                                    id="recipient-name"
+                                    id="indContractor-surname"
                                 />
                             </div>
                             <div class="mb-3">
-                                <label for="message-text" class="col-form-label"
+                                <label
+                                    for="indContractor-name"
+                                    class="col-form-label"
                                     >Имя:</label
                                 >
-                                <textarea
+                                <input
                                     class="form-control"
-                                    id="message-text"
-                                ></textarea>
+                                    id="indContractor-name"
+                                ></input>
                             </div>
                         </form>
                     </div>
@@ -146,6 +148,72 @@
                 </div>
             </div>
         </div>
+
+                <!-- Modal for Adding Ent.Contractors -->
+
+        <div
+            class="modal fade"
+            id="addEntContractor"
+            tabindex="-1"
+            aria-labelledby="addEntContractorModalLabel"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addEntContractorModalLabel">
+                            Добавить юр. лицо
+                        </h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label
+                                    for="entContractor_short_name"
+                                    class="col-form-label"
+                                    >Короткое наименование (обязательно):</label
+                                >
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="entContractor_short_name"
+                                />
+                            </div>
+                            <div class="mb-3">
+                                <label
+                                    for="entContractor-inn"
+                                    class="col-form-label"
+                                    >ИНН:</label
+                                >
+                                <input
+                                    class="form-control"
+                                    id="entContractor-inn"
+                                ></input>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal"
+                        >
+                            Закрыть
+                        </button>
+                        <button type="button" class="btn btn-primary">
+                            Создать и редактировать
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </template>
 

@@ -1,22 +1,32 @@
 <template>
-<div class="container-fluid">
-    <nav class="justify-content-around">
-        <router-link v-if="token" :to="{ name: 'get.index' }">Get</router-link>
-        <router-link v-if="!token" :to="{ name: 'user.login' }">Login</router-link>
-        <router-link v-if="token" :to="{ name: 'user.personal' }">Personal</router-link>
-        <router-link v-if="!token" :to="{ name: 'user.registration' }">Registration</router-link>
-        <router-link v-if="token" :to="{ name: 'contractors' }">Contractors</router-link>
+    <div class="container-fluid">
+        <nav class="justify-content-around">
+            <router-link v-if="token" :to="{ name: 'get.index' }"
+                >Главная</router-link
+            >
+            <router-link v-if="!token" :to="{ name: 'user.login' }"
+                >Войти</router-link
+            >
+            <router-link v-if="token" :to="{ name: 'user.personal' }"
+                >Профайл</router-link
+            >
+            <router-link v-if="!token" :to="{ name: 'user.registration' }"
+                >Регистрация</router-link
+            >
+            <router-link v-if="token" :to="{ name: 'contractors' }"
+                >Контрагенты</router-link
+            >
 
-        <a  v-if="token" @click.prevent="logout" href="#">Logout</a>
+            <a v-if="token" @click.prevent="logout" href="#">Выйти</a>
 
-        <hr>
+            <hr />
 
-        <div v-if="!token" class="d-flex justify-content-center">
-            <login-register></login-register>
-        </div>
-    </nav>
-    <router-view></router-view>
-</div>
+            <div v-if="!token" class="d-flex justify-content-center">
+                <login-register></login-register>
+            </div>
+        </nav>
+        <router-view></router-view>
+    </div>
 </template>
 
 <script>
@@ -25,44 +35,37 @@ import LoginRegister from "./LoginRegister/LoginRegister";
 export default {
     name: "index",
     components: {
-      LoginRegister
+        LoginRegister,
     },
 
     data() {
         return {
             token: null,
-            userName: null
-        }
+            userName: null,
+        };
     },
 
     mounted() {
-        this.getToken()
+        this.getToken();
     },
 
     updated() {
-      this.getToken()
+        this.getToken();
     },
 
     methods: {
-
         getToken() {
-          this.token = localStorage.getItem('x_xsrf_token');
+            this.token = localStorage.getItem("x_xsrf_token");
         },
 
         logout() {
-            axios
-                .post('/logout')
-                .then( res => {
-                    localStorage.removeItem('x_xsrf_token');
-                    this.$router.push({ name: 'user.login' });
-                })
-        }
-    }
-}
-
+            axios.post("/logout").then((res) => {
+                localStorage.removeItem("x_xsrf_token");
+                this.$router.push({ name: "user.login" });
+            });
+        },
+    },
+};
 </script>
 
-<style scoped>
-
-
-</style>
+<style scoped></style>
