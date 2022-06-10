@@ -5442,6 +5442,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "index",
@@ -28502,7 +28505,7 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "container-fluid" },
+    { staticClass: "container-fluid p-5" },
     [
       _c(
         "nav",
@@ -28570,7 +28573,12 @@ var render = function () {
         1
       ),
       _vm._v(" "),
-      _c("router-view"),
+      _c(
+        "transition",
+        { attrs: { name: "component-fade", mode: "out-in" } },
+        [_c("router-view")],
+        1
+      ),
     ],
     1
   )

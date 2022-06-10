@@ -1,5 +1,5 @@
 <template>
-    <div class="container-fluid">
+    <div class="container-fluid p-5">
         <nav class="justify-content-around">
             <router-link v-if="token" :to="{ name: 'get.index' }"
                 >Главная</router-link
@@ -25,7 +25,10 @@
                 <login-register></login-register>
             </div>
         </nav>
-        <router-view></router-view>
+        <transition name="component-fade" mode="out-in">
+            <router-view></router-view>
+        </transition>
+
     </div>
 </template>
 
@@ -67,5 +70,15 @@ export default {
     },
 };
 </script>
+
+    .component-fade-enter-active,
+    .component-fade-leave-active {
+        transition: opacity 0.7s ease;
+    }
+
+    .component-fade-enter-from,
+    .component-fade-leave-to {
+        opacity: 0;
+    }
 
 <style scoped></style>
