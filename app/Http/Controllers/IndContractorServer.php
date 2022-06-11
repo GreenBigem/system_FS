@@ -6,6 +6,9 @@ use App\Models\IndContractors;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+use App\Http\Requests\System\IndContractorsRequest;
+
+
 class IndContractorServer extends Controller
 {
 
@@ -43,9 +46,13 @@ class IndContractorServer extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(IndContractorsRequest $request)
     {
-        //
+        $data = $request->validated();
+        $user_id = Auth::id();
+        $data['user_id'] = $user_id;
+        $createdIndContractor = IndContractors::create($data);
+        return $createdIndContractor;
     }
 
     /**

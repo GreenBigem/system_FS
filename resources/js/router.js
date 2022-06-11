@@ -40,6 +40,10 @@ const router = new VueRouter({
                     name: 'entContractors',
                 }
             ]
+        },
+        {
+            path: '/ind_contractor/:id', component: () => import('./components/contractors/IndContractor'),
+            name: 'indContractor',
         }
     ]
 })

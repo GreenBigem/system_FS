@@ -14,8 +14,8 @@ class IndContractorsRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string',
-            'surname' => 'string',
+            'surname' => 'required|string',
+            'name' => 'string',
         ];
     }
 }

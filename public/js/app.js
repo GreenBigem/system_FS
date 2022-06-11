@@ -5764,6 +5764,12 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_2__["default"]({
       },
       name: 'entContractors'
     }]
+  }, {
+    path: '/ind_contractor/:id',
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ "resources_js_components_contractors_IndContractor_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/contractors/IndContractor */ "./resources/js/components/contractors/IndContractor.vue"));
+    },
+    name: 'indContractor'
   }]
 });
 router.beforeEach(function (to, from, next) {
@@ -44378,7 +44384,7 @@ Vue.compile = compileToFunctions;
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_components_Login_vue":1,"resources_js_components_Registration_vue":1,"resources_js_components_Personal_vue":1,"resources_js_components_Contractors_vue":1,"resources_js_components_contractors_IndContractors_vue":1,"resources_js_components_contractors_EntContractors_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_components_Login_vue":1,"resources_js_components_Registration_vue":1,"resources_js_components_Personal_vue":1,"resources_js_components_Contractors_vue":1,"resources_js_components_contractors_IndContractors_vue":1,"resources_js_components_contractors_EntContractors_vue":1,"resources_js_components_contractors_IndContractor_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

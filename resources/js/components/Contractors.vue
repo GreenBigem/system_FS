@@ -141,7 +141,7 @@
                         >
                             Закрыть
                         </button>
-                        <button type="button" @click="createIndContractor" class="btn btn-primary">
+                        <button type="button" @click.prevent="createIndContractor" class="btn btn-primary">
                             Создать и редактировать
                         </button>
                     </div>
@@ -233,10 +233,15 @@ export default {
     methods: {
 
         createIndContractor() {
-        console.log('Привет');
-        // axios.get("/api/indContractors/").then((res) => {
-        //     this.indContractors = res.data;
-        // });
+        console.log(this.newIndContractorSurname);
+        axios
+            .post('/api/indContractors/', {surname: this.newIndContractorSurname, name: this.newIndContractorName})
+            .then((res) => {
+                this.newIndContractorSurname = null,
+                this.newIndContractorName = null,
+
+                this.$router.push({ path: `/ind_contractor/32` })
+        });
         }
     }
 };

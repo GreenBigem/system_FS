@@ -241,9 +241,17 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {},
   methods: {
     createIndContractor: function createIndContractor() {
-      console.log('Привет'); // axios.get("/api/indContractors/").then((res) => {
-      //     this.indContractors = res.data;
-      // });
+      var _this = this;
+
+      console.log(this.newIndContractorSurname);
+      axios.post('/api/indContractors/', {
+        surname: this.newIndContractorSurname,
+        name: this.newIndContractorName
+      }).then(function (res) {
+        _this.newIndContractorSurname = null, _this.newIndContractorName = null, _this.$router.push({
+          path: "/ind_contractor/32"
+        });
+      });
     }
   }
 });
@@ -515,7 +523,12 @@ var render = function () {
                 {
                   staticClass: "btn btn-primary",
                   attrs: { type: "button" },
-                  on: { click: _vm.createIndContractor },
+                  on: {
+                    click: function ($event) {
+                      $event.preventDefault()
+                      return _vm.createIndContractor.apply(null, arguments)
+                    },
+                  },
                 },
                 [
                   _vm._v(
