@@ -30,9 +30,11 @@ class IndContractorServer extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $indContractor = IndContractors::create($request->all());
+
+        return $indContractor;
     }
 
     /**
@@ -55,7 +57,13 @@ class IndContractorServer extends Controller
      */
     public function show($id)
     {
-        //
+        $user_id = Auth::id();
+        $indContractor = IndContractors::where([
+            ['user_id', $user_id],
+            ['id', $id],
+        ])->get();
+
+        return $indContractor;
     }
 
     /**

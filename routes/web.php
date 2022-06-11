@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 // We use Invokable Controller(MainServer) to route all pages to VUE (#app).
@@ -16,6 +17,8 @@ use App\Http\Controllers\MainServer;
 | contains the "web" middleware group.
 |
 */
+
+Auth::routes();
 
 Route::get('{page}', MainServer::class)
     ->where('page', '.*');

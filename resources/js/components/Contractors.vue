@@ -77,9 +77,7 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <transition name="component-fade" mode="out-in">
-                        <router-view></router-view>
-                    </transition>
+                    <router-view></router-view>
                 </div>
             </div>
         </div>
@@ -117,6 +115,7 @@
                                 <input
                                     type="text"
                                     class="form-control"
+                                    v-model="newIndContractorSurname"
                                     id="indContractor-surname"
                                 />
                             </div>
@@ -128,8 +127,9 @@
                                 >
                                 <input
                                     class="form-control"
+                                    v-model="newIndContractorName"
                                     id="indContractor-name"
-                                ></input>
+                                />
                             </div>
                         </form>
                     </div>
@@ -141,7 +141,7 @@
                         >
                             Закрыть
                         </button>
-                        <button type="button" class="btn btn-primary">
+                        <button type="button" @click="createIndContractor" class="btn btn-primary">
                             Создать и редактировать
                         </button>
                     </div>
@@ -194,7 +194,7 @@
                                 <input
                                     class="form-control"
                                     id="entContractor-inn"
-                                ></input>
+                                />
                             </div>
                         </form>
                     </div>
@@ -220,25 +220,28 @@
 <script>
 export default {
     data() {
-        return {};
+        return {
+            newIndContractorSurname: null,
+            newIndContractorName: null,
+        };
     },
 
     components: {},
 
     mounted() {},
 
-    methods: {},
+    methods: {
+
+        createIndContractor() {
+        console.log('Привет');
+        // axios.get("/api/indContractors/").then((res) => {
+        //     this.indContractors = res.data;
+        // });
+        }
+    }
 };
 </script>
 
-<style>
-.component-fade-enter-active,
-.component-fade-leave-active {
-    transition: opacity 0.7s ease;
-}
+<style scoped>
 
-.component-fade-enter-from,
-.component-fade-leave-to {
-    opacity: 0;
-}
 </style>

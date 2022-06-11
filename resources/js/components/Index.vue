@@ -25,10 +25,7 @@
                 <login-register></login-register>
             </div>
         </nav>
-        <transition name="component-fade" mode="out-in">
             <router-view></router-view>
-        </transition>
-
     </div>
 </template>
 
@@ -71,14 +68,6 @@ export default {
 };
 </script>
 
-    .component-fade-enter-active,
-    .component-fade-leave-active {
-        transition: opacity 0.7s ease;
-    }
+<style scoped>
 
-    .component-fade-enter-from,
-    .component-fade-leave-to {
-        opacity: 0;
-    }
-
-<style scoped></style>
+</style>

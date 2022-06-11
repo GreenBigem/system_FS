@@ -24,23 +24,10 @@
                                     <td>{{ item.patronymic }}</td>
                                     <td>{{ item.birth_date }}</td>
                                     <td>
-                                        <router-link
-                                            :to="{
-                                                name: 'user.personal',
-                                            }"
-                                            class="btn btn-warning"
-                                            >Редактировать</router-link
-                                        >
+                                        <button @click.prevent="showIndContractor(item.id)" class="btn btn-warning">Редактировать</button>
                                     </td>
                                     <td>
-                                        <a
-                                            href="/delete"
-                                            @click.prevent="
-                                                deleteIndContractor(item.id)
-                                            "
-                                            class="btn btn-danger"
-                                            >Удалить</a
-                                        >
+                                        <button @click.prevent="deleteIndContractor(item.id)" class="btn btn-danger">Удалить</button>
                                     </td>
                                 </tr>
                             </tbody>
@@ -58,7 +45,7 @@ export default {
 
     data() {
         return {
-            indContractors: [],
+            indContractors: []
         };
     },
 
@@ -70,17 +57,30 @@ export default {
 
     methods: {
         getIndContractors() {
-            axios.get("/api/indContractors").then((res) => {
+            axios.get("/api/indContractors/").then((res) => {
                 this.indContractors = res.data;
             });
         },
 
         deleteIndContractor(id) {
             console.log(id);
-            axios.delete("/api/indContractors/" + id).then((res) => {
+            axios.delete("/api/indContractors/" + id)
+                .then((res) => {
                 console.log(res);
+            });
+        },
+
+        showIndContractor(id) {
+            console.log(id);
+            axios.get("/api/indContractors/" + id)
+                .then((res) => {
+                console.log(res.data[0]);
             });
         },
     },
 };
 </script>
+
+<style scoped>
+
+</style>
